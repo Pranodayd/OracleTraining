@@ -1,0 +1,70 @@
+Use https://letskodeit.teachable.com/p/practice
+
+1.Enter name in "Enter Your Name" field.Click on Confirm button.Check value entered in the field indeed exists in the messaage
+shown by confirmation window.Close confirmation window by clicking on No button
+
+2.Click on OpenTab button(which will open a new page in new tab).Print title of that new page
+
+
+3.Use below link:
+	https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_input_test
+
+Enter your name in FirstName field.Select entered value using Ctr1 a,copy using ctrl c and paste it in LastName field using Ctrl v
+
+4.
+Use following link:
+	https://www.w3schools.com/js/tryit.asp?filename=tryjs_prompt
+
+	Click TryIt button.Once prompt alert will be shown,enter Name in the edit field of prompt box. and close the alet
+
+5.Use link below:
+	https://letskodeit.teachable.com/p/practice
+
+Type course name in the search field of Iframe given in Ifram example section
+
+6.Use below link
+	https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled
+
+Open page using script and confirm that Click Me! button is DISABLED.
+
+7.
+Use below link
+	https://letskodeit.teachable.com/p/practice
+	Select option Orange in ListBox and check if option selected is indeed Orange or Not
+	Check whether correct options are seen in Listbox or not
+
+
+8.Use below link:
+	https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_table_test
+	
+	Identify td element showing Savings of month February,retrieve the savings value and print on console
+
+9.Use below link:
+	https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_intro
+	
+	Identify td showing CompanyName from country UK,retrieve company name and print it on console.
+
+<bookstore>
+	
+	<book>
+  		<title>Harry Potter</title>
+  		<author>J K. Rowling</author>
+  		<year>2005</year>
+  		<price>29.99</price>
+	</book>
+
+</bookstore>
+
+bookstore             		Will return all bookstore elements
+/bookstore			Will return bookstore which is Root
+bookstore/book			Will return ALL book elements which are CHILD of bookstore
+bookstore//book			Will return ALL book elements which are DESCENDANT of bookstore
+//@lang				Will return me element having Lang attribute set
+
+bookstore/book[1]		Will return 1st book child element of bookstore
+bookstore/book[last()]		Will return LAST book child element of bookstore.And this may return different elements
+				depending on how many we have,hence it is called DYNAMIC XPATH
+bookstore/book[@lang='eng']	Will return Child element of bookstore with name book having lang attribute set to 'Eng'
+
+Useful links:
+	https://www.w3schools.com/xml/xpath_intro.asp	

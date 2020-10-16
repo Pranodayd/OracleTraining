@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "edbcad86-afcd-4d00-902c-adedc4ed140f",
+		"name": "RestCountriesAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllCountries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4c7c9813-d3b4-444e-8d11-155df224aa10",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct Country Name\", function () {\r",
+							"    var Response=pm.response.json();\r",
+							"    pm.expect(Response[0].name).to.eql(\"Afghanistan\");\r",
+							"    console.log(\"My name is Pranoday\")\r",
+							"    pm.environment.set(\"Countries\",Response);\r",
+							"    console.log(pm.variables.get(\"Countries\"))\r",
+							"    pm.expect(Response[0].capital).to.eql(\"Kabul\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1eb0580f-6b4c-4c8e-8c7b-2b611b2d78f7",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Key",
+						"value": "{{RapidAPIKey}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{apiurl}}/all",
+					"host": [
+						"{{apiurl}}"
+					],
+					"path": [
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDetailsByCountryName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ed5b137-4a3b-448e-b454-db5bac0aa9dc",
+						"exec": [
+							"var JsonResponse=pm.response.json();\r",
+							"pm.test(\"Check Capital\", function () {\r",
+							"    pm.expect(JsonResponse[0].capital).to.eql(\"Moscow\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f9bedeac-fe00-4bb2-882b-7d3faa823592",
+						"exec": [
+							"var countries=pm.environment.get(\"Countries\");\r",
+							"for(var i=0;i<countries.length;i++)\r",
+							"{\r",
+							"    //console.log(country.name)\r",
+							"    if(countries[i].name=='Russia')\r",
+							"    {\r",
+							"         pm.environment.set(\"RequiredCountry\",countries[i].name);\r",
+							"         console.log(pm.variables.get(\"RequiredCountry\"));\r",
+							"    }\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Key",
+						"value": "{{RapidAPIKey}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{apiurl}}/name/{{RequiredCountry}}",
+					"host": [
+						"{{apiurl}}"
+					],
+					"path": [
+						"name",
+						"{{RequiredCountry}}"
+					],
+					"query": [
+						{
+							"key": "X-RapidAPI-Key",
+							"value": "{{RapidAPIKey}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

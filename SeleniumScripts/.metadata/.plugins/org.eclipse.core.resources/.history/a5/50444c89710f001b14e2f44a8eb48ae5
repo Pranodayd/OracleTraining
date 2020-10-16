@@ -1,0 +1,22 @@
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AlertHandling {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "E:\\Students\\Postman\\Drivers\\chromedriver.exe");
+		ChromeDriver D=new ChromeDriver();
+		D.get("https://letskodeit.teachable.com/p/practice");
+		
+		WebElement NameField=D.findElementByName("enter-name");
+		NameField.sendKeys("Pranoday");
+		
+		String Name=NameField.getAttribute("value")
+		//enter-name
+		
+		
+	}
+
+}

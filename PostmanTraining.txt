@@ -1,0 +1,205 @@
+References:
+	https://www.chaijs.com/
+	https://learning.postman.com/docs/sending-requests/variables/
+WebServices:
+	Developing an app in Java
+	API to be called should be written in the same language as that of our application
+
+	meth1()
+	{
+		//java code
+
+		Addition(10,20)
+	}
+
+	Addition(int a,int b)
+	{
+		Java Code
+	}
+
+
+	WebServices are APIs written in programming languages and are explosed to be called using Web protocols
+	So here we can call APIs written in any programming language
+
+         WSDL is a Web Service Defination Language which mentions metadata about Web APIs like number of parameters,types of parameters,return value etc.
+
+REST APIs:
+	APIs which supports following methods:
+		Get,Post,Put,Delete
+		
+
+Json Representation Notations:
+[] are Json Arrays of objects
+{} are Json Objects
+
+[
+    {
+        "name": "Russia",
+        "topLevelDomain": [
+            ".ru"
+        ],
+        "alpha2Code": "RU",
+        "alpha3Code": "RUS",
+        "callingCodes": [
+            "7"
+        ],
+        "capital": "Moscow",
+        "altSpellings": [
+            "RU",
+            "Rossiya",
+            "Russian Federation",
+            "Российская Федерация",
+            "Rossiyskaya Federatsiya"
+        ],
+        "region": "Europe",
+        "subregion": "Eastern Europe",
+        "population": 146556330,
+        "latlng": [
+            60.0,
+            100.0
+        ],
+        "demonym": "Russian",
+        "area": 1.7124442E7,
+        "gini": 40.1,
+        "timezones": [
+            "UTC+03:00",
+            "UTC+04:00",
+            "UTC+06:00",
+            "UTC+07:00",
+            "UTC+08:00",
+            "UTC+09:00",
+            "UTC+10:00",
+            "UTC+11:00",
+            "UTC+12:00"
+        ],
+        "borders": [
+            "AZE",
+            "BLR",
+            "CHN",
+            "EST",
+            "FIN",
+            "GEO",
+            "KAZ",
+            "PRK",
+            "LVA",
+            "LTU",
+            "MNG",
+            "NOR",
+            "POL",
+            "UKR"
+        ],
+        "nativeName": "Россия",
+        "numericCode": "643",
+        "currencies": [
+            "RUB"
+        ],
+        "languages": [
+            "ru"
+        ],
+        "translations": {
+            "de": "Russland",
+            "es": "Rusia",
+            "fr": "Russie",
+            "ja": "ロシア連邦",
+            "it": "Russia"
+        },
+        "relevance": "2.5"
+    }//Close of Object
+]
+		CreateCustomer() POST
+		DeleteCustomer() DELETE 
+		ModifyCustomer() PUT
+		PrintCustomerDetails() GET
+
+		name
+		GetCountryDetailsByName(String CountryName)
+		{
+			Select * from Countries where CountryName=CountryName
+		}
+Postman
+		WebPage request's response is in the form of HTML
+		It is a REST CLIENT which sends requests to Rest APIs
+		Rest APIs responses are usually in the form of Json/xml
+
+
+API Key:c85c704cd4msh53812487e92823dp1e4658jsnc1ac52e04d03
+		
+		
+
+When we send any request
+	We need to mention address of a resource which we want to access e.g. http://localhost/index.html
+	We need to send some DATA along with actual request address,usually Request data is send in case of POST request
+	Headers is a collection of DATA which would be desrcribed the sender and server will use this to understand more
+	about him e.g.Authentication
+		
+
+Types Of Variables:
+	Global Variables:GLOBAL variables are available across different collections,requests
+	EnvironmentVariables:These save application Settings like application URL
+	
+
+Scopes:
+	Global
+	Collection
+	Environment
+	Data    >>Datadriven
+	local			
+
+Different Types of parameters
+
+1.Query Parameters
+   https://restcountries-v1.p.rapidapi.com?countryname=India&countryCode=91
+   After ? in URL we can mention collection of Variables separated by "&",and these is called as QUERY STRING	
+2.Path Parameters
+https://restcountries-v1.p.rapidapi.com/name/norge
+
+
+Collection Runner
+Import/export environments and collections
+
+
+
+NewMan:
+
+	Newman is COMMAND LINE INTERFACE provided for Postman
+	Newman is used for executing Postman scripts through Command Prompt
+        Newman can be used to integrate Postman script executions in CI/CD pipelines
+
+	Nodejs is a RUNTIME ENVIRONMENT provided to run JAVA Script code
+	npm stands for Node Package Manager which downloads Node packages from npmjs to our machine
+	Newman is a programs written in JavaScript
+
+	Command to install newman globally:
+	npm install -g newman
+		
+Usage:
+	newman run Collection environment	
+
+
+https://api.getpostman.com/collections?apikey=$apiKey
+https://api.getpostman.com/collections/$uid?apikey=$apiKey
+https://api.getpostman.com/environments?apikey=$apiKey
+
+Exaples:
+**Retrieve ALL COLLECTIONS: 
+	https://api.getpostman.com/collections?apikey=PMAK-5f7c3c30ee7556003cc07e64-fe3ff2aadcba6aaa5c319d868a781905d8
+
+**Retrieve information about PARTICULAR COLLECTION:
+	https://api.getpostman.com/collections/12986982-c5163487-6363-4e5e-b833-dab54417cab0?apikey=PMAK-5f7c3c30ee7556003cc07e64-fe3ff2aadcba6aaa5c319d868a781905d8
+
+**Retrieve information about ALL ENVIRONMENTS
+	https://api.getpostman.com/environments?apikey=PMAK-5f7c3c30ee7556003cc07e64-fe3ff2aadcba6aaa5c319d868a781905d8
+
+**Retrieve information of PARTICULAR ENVIRONMENT:
+	https://api.getpostman.com/environments/12986982-b5e007ea-4b37-4dcc-8e62-d416da49631a?apikey=PMAK-5f7c3c30ee7556003cc07e64-fe3ff2aadcba6aaa5c319d868a781905d8
+
+
+
+
+
+{"collections":[{"id":"1140102c-d27f-44f6-90a0-3d6fb2abb6bf","name":"Collection1","owner":"12986982","uid":"12986982-1140102c-d27f-44f6-90a0-3d6fb2abb6bf"},{"id":"5a14fe5a-2efa-49b0-bf66-b6d6b60a1ba5","name":"PostmanEndpoints","owner":"12986982","uid":"12986982-5a14fe5a-2efa-49b0-bf66-b6d6b60a1ba5"},{"id":"94f2f387-9ed4-4f9f-b6df-c27372c34188","name":"RestCountriesAPI Copy","owner":"12986982","uid":"12986982-94f2f387-9ed4-4f9f-b6df-c27372c34188"},{"id":"a707adbf-0453-4104-bae1-fe78a3f8c2b8","name":"SampleCollection","owner":"12986982","uid":"12986982-a707adbf-0453-4104-bae1-fe78a3f8c2b8"},{"id":"bef9ac78-dff0-411d-9b9c-b308431c9833","name":"bunq Public API","owner":"12986982","uid":"12986982-bef9ac78-dff0-411d-9b9c-b308431c9833"},{"id":"bf8f1c93-e800-46e9-a4d2-fcee7690397f","name":"TestDataOfCountires Copy","owner":"12986982","uid":"12986982-bf8f1c93-e800-46e9-a4d2-fcee7690397f"},{"id":"c5163487-6363-4e5e-b833-dab54417cab0","name":"TestDataOfCountires","owner":"12986982","uid":"12986982-c5163487-6363-4e5e-b833-dab54417cab0"},{"id":"ca0661fc-e7d3-42e5-9eec-fad241f9b426","name":"Writing test scripts","owner":"12986982","uid":"12986982-ca0661fc-e7d3-42e5-9eec-fad241f9b426"},{"id":"edbcad86-afcd-4d00-902c-adedc4ed140f","name":"RestCountriesAPI","owner":"12986982","uid":"12986982-edbcad86-afcd-4d00-902c-adedc4ed140f"}]}
+
+
+**DataDriven Testing:
+	A type of testing where Steps are same but data is different
+		

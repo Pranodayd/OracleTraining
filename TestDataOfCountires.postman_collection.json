@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "c5163487-6363-4e5e-b833-dab54417cab0",
+		"name": "TestDataOfCountires",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FetchCountires",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "469417d8-3f60-4839-a274-e78649be82ae",
+						"exec": [
+							"var ResponseBody=pm.response.json();\r",
+							"var CountryName=ResponseBody[0].name;\r",
+							"pm.environment.set(\"RequiredCountryName\",CountryName)\r",
+							"pm.test(\"Confirm GetCountries URL is returning STATUS OK\",function(){\r",
+							"\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Key",
+						"value": "{{AppKey}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{ApplicationUrl}}/all?={{AppKey}}",
+					"host": [
+						"{{ApplicationUrl}}"
+					],
+					"path": [
+						"all"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "{{AppKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FetchCountryDetailsBasedOnName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e7036146-07f5-4c5e-a30d-031821d05bc3",
+						"exec": [
+							"var ResponseBody=pm.response.json();\r",
+							"pm.test(\"Confirm Getbycountryname URL is returning STATUS OK\",function(){\r",
+							"\r",
+							"    pm.response.to.have.status(200);\r",
+							"\r",
+							"});\r",
+							"pm.test(\"Checking Capital of Country\",function(){\r",
+							"    \r",
+							"    var CountryName=ResponseBody[0].capital;\r",
+							"    pm.expect(CountryName).to.eql(\"Kabul\");\r",
+							"    \r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-RapidAPI-Key",
+						"value": "{{AppKey}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{ApplicationUrl}}/name/{{RequiredCountryName}}",
+					"host": [
+						"{{ApplicationUrl}}"
+					],
+					"path": [
+						"name",
+						"{{RequiredCountryName}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

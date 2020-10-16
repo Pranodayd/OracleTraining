@@ -1,0 +1,33 @@
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FrameHandling 
+{
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		System.setProperty("webdriver.chrome.driver", "E:\\Students\\Postman\\Drivers\\chromedriver.exe");
+		ChromeDriver D=new ChromeDriver();
+		D.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_input_test");
+		
+		/*
+		 * WebDriver by default works with the main html page
+		 */
+		
+				/*
+		 * Telling WebDriver to move its searching context from MAIN Page to frame
+		 * hosting nested html document from which we want to work the elements
+		 */
+		D.switchTo().frame("iframeResult");
+		WebElement Fname=D.findElementById("fname");
+		Fname.sendKeys("Pranoday");
+
+		WebElement Lname=D.findElementById("lname");
+		Fname.sendKeys("Dingare");
+		
+		WebElement LoginBtn=D.findElementByCssSelector("input[type='submit']");
+
+		
+	}
+
+}

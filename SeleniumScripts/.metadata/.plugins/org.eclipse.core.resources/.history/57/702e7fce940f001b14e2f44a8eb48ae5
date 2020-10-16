@@ -1,0 +1,20 @@
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CheckboxHandling {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+
+		
+		System.setProperty("webdriver.chrome.driver", "E:\\Students\\Postman\\Drivers\\chromedriver.exe");
+		ChromeDriver D=new ChromeDriver();
+		D.get("https://letskodeit.teachable.com/p/practice");
+		
+		WebElement Chk1 =D.findElementById("bmwcheck");
+		Chk1.click();
+	
+	}
+
+}

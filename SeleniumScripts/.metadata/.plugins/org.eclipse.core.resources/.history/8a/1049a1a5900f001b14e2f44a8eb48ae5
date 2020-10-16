@@ -1,0 +1,50 @@
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class HandlingContextMenu {
+
+	public static void main(String[] args) throws InterruptedException, AWTException 
+	{
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "E:\\Students\\Postman\\Drivers\\chromedriver.exe");
+		ChromeDriver D=new ChromeDriver();
+		D.get("https://letskodeit.teachable.com/p/practice");
+	
+		WebElement NameField= D.findElementById("name");
+		NameField.sendKeys("Pranoday");
+		Thread.sleep(5000);
+		Actions Act =new Actions(D);
+		
+		Act.contextClick(NameField).perform();   //Right Click
+		Thread.sleep(1000);
+		Robot R=new Robot();
+		for(int cnt=1;cnt<=5;cnt++)
+		{
+			R.keyPress(KeyEvent.VK_DOWN);
+			Thread.sleep(1000);
+		}	
+		R.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(1000);
+		Act.contextClick(NameField).perform();
+		Thread.sleep(1000);
+		for(int cnt=1;cnt<=6;cnt++)
+		{
+			R.keyPress(KeyEvent.VK_DOWN);
+			Thread.sleep(1000);
+		}
+		R.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(1000);
+		
+		Act.contextClick(NameField).perform();   //Right Click
+		Thread.sleep(1000);
+		
+	
+	}
+
+}

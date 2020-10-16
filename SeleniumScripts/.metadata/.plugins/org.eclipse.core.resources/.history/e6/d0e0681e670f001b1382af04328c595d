@@ -1,0 +1,59 @@
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SimpleSeleniumScript {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "E:\\Students\\Postman\\Drivers\\chromedriver.exe");
+		ChromeDriver D=new ChromeDriver();
+		D.get("https://letskodeit.teachable.com/p/practice");
+		/*
+		 * 1.Click on Hide button
+		 * 2.Get the value of Hidden property of TextBox
+		 * 3.Confirm that value of Hidden property is False
+		 */
+		D.manage().window().maximize();
+		Thread.sleep(5000);
+		WebElement HideButton=D.findElementById("hide-textbox");
+		HideButton.click();
+		Thread.sleep(5000);
+		WebElement TxtElement=D.findElementByName("show-hide");
+		boolean IsVisible=TxtElement.isDisplayed();
+		if(IsVisible==false)
+			System.out.println("HIDE BUTTON works fine");
+		else
+			System.out.println("HIDE BUTTON DOES NOT work fine");
+		//Syntax of Css:TAGNAME[AttributeName='AttributeValue']
+		WebElement ShowButton=D.findElementByCssSelector("input[value='Show']");
+		ShowButton.click();
+		Thread.sleep(5000);
+		IsVisible=TxtElement.isDisplayed();
+		if(IsVisible==true)
+			System.out.println("SHOW BUTTON works fine");
+		else
+			System.out.println("SHOW BUTTON DOES NOT work fine");
+		
+		
+		
+		Thread.sleep(5000);
+		
+		/**
+		 * 2 nd WAY
+		 */
+		
+		HideButton.click();
+		Thread.sleep(5000);
+		//getAttribute allows us to retrieve CURRENT VALUE of certain attribute for an element
+		TxtElement.getAttribute("")
+		if(IsVisible==false)
+			System.out.println("HIDE BUTTON works fine");
+		else
+			System.out.println("HIDE BUTTON DOES NOT work fine");
+	
+		
+		D.close();
+	}
+
+}

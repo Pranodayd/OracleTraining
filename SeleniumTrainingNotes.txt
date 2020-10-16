@@ -1,0 +1,176 @@
+Application
+	UI
+		Interface Design Techs:
+			WPF
+			Winforms
+			
+			AWT
+			Swings
+			
+	UiAutomation tools:
+	1.Instruction is going to contains information about UI Control and TYPE OF INTERACTION(e.g. TYPING,CLICKING ETC.)
+	  we want to perform.	
+
+
+	  1.Information about UI Control:In terms of Attribute Uniquely set
+
+		Types of Identifications:
+			1.Image:Tool uses image of an UI control to identify control on interface
+			2.Native:Tool uses UI control properties to identify control on interface(could be 1 property or multiple)
+			3.Relational Identification:Using relationships controls maintain with other controls on screen
+		 
+	  2.Type Of Interaction:It can be provided by using SET OF APIs provided by tool  
+ 
+				
+
+	  DIFFERENT TYPES OF INTERFACES:
+		1.Web Interface:
+			Interfaces which are designed using Web technologies like HTML,HTML5,Angular,BootStrap etc.
+			Applications like:Any website e.g. gmail.com,google.com etc.	
+		2.Native Interface:
+			Interfaces which are NOT DESIGNED with Web Technologies but are designed with different
+			platform SDKs e.g. WPF,Swings,AWT,Winforms,Android SDK,IOS SDK
+			Applications like:Notepad,Wordpad,Calcuator etc.
+		3.Hybrid Interface:
+			Interface which is COMBIATION OF WEB AS WELL AS NATIVE.
+			e.g. OLA application	
+	
+	  UIAutomation tools examples:
+	  UFT
+	  TestComplete
+	  Ranorex
+	  Selenium
+	 
+	 UIAutomation tools supporting Mobile apps
+	 Appium
+	 TestComplete					
+	 Seetest
+	
+	Design Of Control:
+		<group>
+			<button height=10 Width=10 X=100 Y=100>
+		</group>
+		
+		<div>
+			<button height=10 Width=10 X=100 Y=100>
+		</div>
+	1.Click on button 7
+	  Click on button +
+	  Click on button 7
+	  Click on button =
+	  Read data from Result field
+	  Data should be 14						
+
+	BackEnd Layer:
+
+	1.Calling Adition API with query parameters 7 and 7
+	  Parse response json and check Result is indeed 14.
+
+	httP://localhost:8080/Addition?num1=7&num2=7
+	Addition(int a,int b)
+	{
+
+		return a+b
+	}
+
+	{
+
+		Result:14
+	}
+
+
+Selenium Architecture:
+	Came in around 2004
+	Version 1.0
+		Selenium IDE:
+			It contains Set of commands to perform different types of UI interactions
+			e.g Click,sendKeys etc.
+			
+			Commands for mentioning Identification Data:
+				findElementById("id1")
+				findElementByName("q")
+				findElementByClassName("gLFyf gsfi")
+				findElementByLinkText("Gmail")
+				etc.
+                
+			It supports RecordPlay facilty
+				
+			Disadvantsges:
+				1.Does not support writing scripts using programming languages
+				2.Was supporting only Firefox browser
+
+		Selenium RC:
+			All Selenium commands have been implemented in Well known languages like Java,C# etc.
+			These APIs written in multiple languages have been built in different liabraries
+			e.g These set of APIs implemented in different JAVA CLASSES and bundled these
+			classes in liabraries(i.e. Jar files)
+			
+			JAVA
+			{
+				setProxy("10.9.3.16")
+				findElementByName("q").sendKeys("Pranoday")
+			}
+				
+			TRANSLATOR(RC Server)
+			{
+				Translate Seleium APIs into JAVA Script 
+				GetElementByName("q").value="Pranoday"
+			}		
+			
+			SELENIUM CORE(Server socket program)
+			{
+				It is a program(OBVIOUSLY WRITTEN IN JAVA SCRIPT) which runs inside browser,and communicates
+				with the TRANSLATOR to get the TRANSLATED JS COMMANDS,and executes the translated commands
+				inside browser.
+			}
+
+		DISADVANTAGE:
+			We can not Take CONTROL OVER BROWSER in our scripts.
+			We can only interact with UI elements on an application
+
+		
+		WebDriver:Selenium 2.0
+
+			JAVA
+			{
+				
+				findElementByName("q").sendKeys("Pranoday")
+			}
+				
+			TRANSLATOR
+			{
+			   ChromeDriver		FirefoxDriver    EdgeDriver
+			}		
+			
+			Chrome:            Firefox:		 Edge	
+			SetText("PD")      EnterText("PD")       TypeText("PD")
+
+	Selenium 3.0
+		We can automate ALL TYPES(WEB,NATIVE AND HYBRID INTERFACES) OF APPLICATIONS USING SELENIUM APIs
+		Native SDks provide us with set of liabraries to to design native application interfaces along with
+		UIAutomation libs(UiAutomation frameworks)
+
+		uiAutomator(Automation tool for Android Apps)
+		Java language
+		
+		JAVA
+		{
+			findElementByName("q").sendKeys("Pranoday")
+		}
+		
+		TRANSLATOR
+		{
+			AndroidDriver			IOSDriver			WindowsDriver
+		}
+
+		AndroidUiAutomatorAPI calls		IOSXCUITestFramework		MicrosoftUIAutomationAPI
+		
+			
+						
+
+<panel>
+	<button>1</button>
+	<button>2</button>
+	<button>3</button>
+	<button>4</button>
+</panel>					

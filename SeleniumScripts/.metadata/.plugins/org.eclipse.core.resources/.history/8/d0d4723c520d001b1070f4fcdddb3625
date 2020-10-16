@@ -1,0 +1,12 @@
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SimpleSeleniumScript {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "E:\\Students\\Postman\\Drivers\\chromedriver.exe");
+		ChromeDriver D=new ChromeDriver();
+	}
+
+}

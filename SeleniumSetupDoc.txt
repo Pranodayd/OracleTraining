@@ -1,0 +1,12 @@
+1.Java Project
+2.Selenium Java libs(.jar files)
+	Download zip from https://www.selenium.dev/downloads/
+3.WebDrivers:
+	ChromeDriver download link:
+		Download compatible chromedriver from below link:
+			https://chromedriver.chromium.org/downloads	
+
+
+The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
+
+E:\Students\Postman\Drivers

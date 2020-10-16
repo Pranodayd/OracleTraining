@@ -1,0 +1,42 @@
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SimpleSeleniumScript {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "E:\\Students\\Postman\\Drivers\\chromedriver.exe");
+		ChromeDriver D=new ChromeDriver();
+		D.get("https://letskodeit.teachable.com/p/practice");
+		/*
+		 * 1.Click on Hide button
+		 * 2.Get the value of Hidden property of TextBox
+		 * 3.Confirm that value of Hidden property is False
+		 */
+		D.manage().window().maximize();
+		
+		WebElement HideButton=D.findElementById("hide-textbox");
+		HideButton.click();
+		WebElement TxtElement=D.findElementByName("show-hide");
+		boolean IsVisible=TxtElement.isDisplayed();
+		if(IsVisible==false)
+			System.out.println("HIDE BUTTON works fine");
+		else
+			System.out.println("HIDE BUTTON DOES NOT work fine");
+		
+		WebElement ShowButton=D.findElementByCssSelector("input[value='Show']");
+		ShowButton.click();
+		
+		IsVisible=TxtElement.isDisplayed();
+		if(IsVisible==true)
+			System.out.println("SHOW BUTTON works fine");
+		else
+			System.out.println("SHOW BUTTON DOES NOT work fine");
+		
+		
+		
+		D.close();
+	}
+
+}

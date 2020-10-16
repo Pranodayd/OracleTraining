@@ -1,0 +1,34 @@
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WindowHandling {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "E:\\Students\\Postman\\Drivers\\chromedriver.exe");
+		ChromeDriver D=new ChromeDriver();
+		D.get("https://letskodeit.teachable.com/p/practice");
+		
+		WebElement OpenWindowButton=D.findElementById("openwindow");
+		OpenWindowButton.click();
+		
+		/*
+		 * Every opened window on screen has 1 unique property set i.e. WndHandle.
+		 * 
+		 */
+		
+		/*
+		 * D.getWindowHandle(); will return handle of CURRENT WINDOW.
+		 * CURRENT WINDOW MEANS THE WINDOW DRIVER IS CURRENTLY WORKING ON.
+		 * 
+		 * BY DEFAULT DRIVER WORKS ON WINDOW IT STARTS DURING TEST EXECUTION
+		 */
+		String OriginalWindowHandle=D.getWindowHandle();
+		
+		Set<String>Handles=D.getWindowHandles();
+		
+	}
+
+}
